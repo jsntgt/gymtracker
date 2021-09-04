@@ -4,9 +4,13 @@
 <title>Add product</title>
 {% endblock head %}
 {% block content %}
-<form method="POST" class="product_form">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit" class="btn btn-primary">Add product</button>
-</form>
+    <div class="content-section">
+        <form method="POST" class="product_form">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {{ form|crispy }}
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Add product</button>
+        </form>
+    </div>
 {% endblock content %}
