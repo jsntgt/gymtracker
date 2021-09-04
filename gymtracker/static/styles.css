@@ -1,0 +1,6 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.product_form {
+    width: 50%;
+}

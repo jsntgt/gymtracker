@@ -1,0 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+.product_form {
+  width: 50%; }
+
+/*# sourceMappingURL=styles.css.map */
