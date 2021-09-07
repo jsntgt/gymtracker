@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     {% block head %}{% endblock head %}
 </head>
-<body>
+<body class="mt-5">
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
@@ -28,7 +28,7 @@
                     <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                 {% else %}
                     <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                    <a class="nav-item nav-link" href="#">Register</a>
+                    <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
                 {% endif %}
             </div>
             </div>
@@ -38,6 +38,13 @@
     <main role="main" class="container">
         <div class="row">
             <div class="col-md-8">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
                 {% block content %}{% endblock %}
             </div>
         </div>
