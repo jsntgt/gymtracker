@@ -8,7 +8,13 @@
 *.pyc
 __pycache__
 db.sqlite3
-media
+product_images/
+background_images/
+profile_images/
+
+#temporary
+media/
+
 
 # Backup files # 
 *.bak 

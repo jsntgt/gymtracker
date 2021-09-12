@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 UNIT_CHOICES = (
     ("gram", "g"),
@@ -22,6 +23,10 @@ class Product(models.Model):
     carbohydrates = models.DecimalField(max_digits=10, decimal_places=1)
     proteins = models.DecimalField(max_digits=10, decimal_places=1)
     image = models.ImageField(default='', upload_to='product_images')
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     def get_absolute_url(self):
         return reverse("product_detail", kwargs={"id": self.pk})
+
+    def __str__(self):
+        return f'Product {self.name} added by {self.author}'
