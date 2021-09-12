@@ -1,7 +1,17 @@
 *, *::before, *::after {
   box-sizing: border-box; }
 
-.product_form {
-  width: 50%;}
+main.container {
+  margin-top: 56px; }
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.product__img {
+  width: 95%;
+  height: 300px;
+  object-fit: cover; }
 
 /*# sourceMappingURL=styles.css.map */
