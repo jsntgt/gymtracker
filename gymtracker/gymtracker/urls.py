@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from users import views as user_views
 from django.contrib.auth import views as auth_view
-from macros.views import ProductFormView, ProductDetailView
+from macros.views import ProductFormView, ProductDetailView, ProductListView
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('product/add', ProductFormView.as_view(), name="add_product"),
     path('product/<int:id>', ProductDetailView.as_view(), name="product_detail"),
+    path('product_list', ProductListView.as_view(), name="product_list"),
     path('login/', auth_view.LoginView.as_view(template_name="users/login.html"), name="login"),
     path('logout/', auth_view.LogoutView.as_view(template_name="users/logout.html"), name="logout"),
     path('register/', user_views.register, name="register"),
