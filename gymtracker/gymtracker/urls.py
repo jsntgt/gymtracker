@@ -31,6 +31,7 @@ urlpatterns = [
     path('profile/', user_views.profile, name="profile"),
     path('profile/update/', user_views.update, name="update"),
     path('', include('users.urls')),
+    path('workout/', include('workout.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

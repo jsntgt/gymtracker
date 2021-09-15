@@ -40,12 +40,12 @@ class Exercise(models.Model):
 
 class Template(models.Model):
     name = models.CharField(max_length=30)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     notes = models.CharField(max_length=255)
     exercises = models.ManyToManyField(Exercise)
 
     def __str__(self):
-        return f"{self.user.username}'s-{self.name} template"
+        return f"{self.author.username}'s-{self.name} template"
 
 
 class Workout(models.Model):
