@@ -16,7 +16,7 @@
             Options
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="{% url 'template-edit' template.id %}">Edit</a>
             <a class="dropdown-item" href="#">Duplicate</a>
             <a class="dropdown-item" href="#">Share</a>
             <a class="dropdown-item" href="#">Delete</a>
@@ -24,6 +24,7 @@
             <a class="dropdown-item" href="#">Start Workout</a>
           </div>
         </div>
+        <p>{{ template.notes }}</p>
         <p class="card-text">
             {% for exercise in template.exercises.all %}
             {{ exercise.name }}{% if not forloop.last %}, {% endif %}

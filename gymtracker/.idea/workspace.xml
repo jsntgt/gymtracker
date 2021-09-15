@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8720b98b-da43-48a9-a1f0-b9ef98d409f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gymtracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/gymtracker/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macros/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/macros/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/profile_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workout/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/workout/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout/templates/workout/workout_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/workout/templates/workout/workout_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workout/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/workout/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workout/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/workout/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../requirements.txt" afterDir="false" />
     </list>
@@ -36,11 +37,12 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/media" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/workout/templates/workout" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/workout/templates/workout" />
       <recent name="$PROJECT_DIR$/media" />
       <recent name="$PROJECT_DIR$/users/templates/users" />
     </key>

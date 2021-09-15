@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
+from django.urls import reverse
 
 CATEGORY_CHOICES = (
     ("barbell", "Barbell"),
@@ -46,6 +47,9 @@ class Template(models.Model):
 
     def __str__(self):
         return f"{self.author.username}'s-{self.name} template"
+
+    def get_absolute_url(self):
+        return reverse('template-edit', kwargs={'pk': self.pk})
 
 
 class Workout(models.Model):
