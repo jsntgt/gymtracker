@@ -3,8 +3,8 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 UNIT_CHOICES = (
-    ("gram", "g"),
-    ("milliliter", "ml")
+    ("g", "g"),
+    ("ml", "ml")
 )
 WEIGHT_VALUES_CHOICES = (
     ("100g", "100g"),

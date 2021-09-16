@@ -1,0 +1,8 @@
+{% for product in products %}
+    <li>{{ product.name }}
+        <section class="product__data d-flex justify-content-between">
+            <p class="text-muted">{{ product.weight }} {{ product.weight_unit }}</p>
+            <p class="text-muted">{{ product.energy }} kcal</p>
+        </section>
+    </li>
+{% endfor %}

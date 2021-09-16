@@ -3,9 +3,47 @@
     <title>Product list</title>
 {% endblock head %}
 {% block content %}
-    <ul>
+    <form>
+        <label for="name">Search product</label>
+        <input type="text" id="name" class="form-control">
+    </form>
+    <ul class="product_list">
         {% for product in object_list %}
-            <li>{{ product.name }}</li>
+            <li>{{ product.name }}
+                <section class="product__data d-flex justify-content-between">
+                    <p class="text-muted">{{ product.weight }} {{ product.weight_unit }}</p>
+                    <p class="text-muted">{{ product.energy }} kcal</p>
+                </section>
+            </li>
         {% endfor %}
     </ul>
+    <script>
+        const user_input = $("#name")
+        const product_list = $('.product_list')
+        const endpoint = '/product_list'
+        const delay_by_in_ms = 300
+        let scheduled_function = false
+
+        let ajax_call = function (endpoint, request_parameters) {
+            $.getJSON(endpoint, request_parameters)
+                .done(response => {
+                    product_list.fadeTo('fast', 0).promise().then(() => {
+                         product_list.html(response["html"]);
+                         product_list.fadeTo('fast', 1);
+                    })
+                })
+        }
+
+        user_input.on('keyup', function () {
+
+            const request_parameters = {
+                name: $(this).val()
+            }
+            if (scheduled_function) {
+                clearTimeout(scheduled_function)
+            }
+            scheduled_function = setTimeout(ajax_call, delay_by_in_ms, endpoint, request_parameters)
+        })
+
+    </script>
 {% endblock content %}
