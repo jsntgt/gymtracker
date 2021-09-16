@@ -10,19 +10,19 @@
     <div class="card-body">
         <h5 class="card-title">{{ template.name }}</h5>
         <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button"
-                  id="dropdownMenuButton" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-            Options
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{% url 'template-edit' template.id %}">Edit</a>
-            <a class="dropdown-item" href="#">Duplicate</a>
-            <a class="dropdown-item" href="#">Share</a>
-            <a class="dropdown-item" href="#">Delete</a>
-              <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Start Workout</a>
-          </div>
+            <button class="btn btn-primary dropdown-toggle" type="button"
+                    id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                Options
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{% url 'template-edit' template.id %}">Edit</a>
+                <a class="dropdown-item" href="#">Duplicate</a>
+                <a class="dropdown-item" href="#">Share</a>
+                <a class="dropdown-item" href="{% url 'template-delete' template.id %}">Delete</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Start Workout</a>
+            </div>
         </div>
         <p>{{ template.notes }}</p>
         <p class="card-text">
@@ -33,5 +33,8 @@
     </div>
 </div>
 {% endfor %}
-
+<div>
+    <a class="btn btn-primary" href="{% url 'template-create' %}" role="button">Add Template</a>
+    <a class="btn btn-primary" href="#" role="button">Start Workout</a>
+</div>
 {% endblock content %}
