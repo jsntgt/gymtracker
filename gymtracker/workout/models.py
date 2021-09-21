@@ -57,7 +57,7 @@ class Workout(models.Model):
     template = models.ForeignKey(Template, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return f"{self.template.user.username} workout from {self.date}"
+        return f"{self.template.author.username} workout from {self.date}"
 
 
 class Set(models.Model):

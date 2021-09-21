@@ -8,4 +8,5 @@ urlpatterns = [
     path('template/<int:pk>/edit/', TemplateEditView.as_view(), name='template-edit'),
     path('template/<int:pk>/delete/', TemplateDeleteView.as_view(), name='template-delete'),
     path('template/new', TemplateCreateView.as_view(), name='template-create'),
+    path('template/<int:pk>/duplicate/', views.template_duplicate, name='template-duplicate'),
 ]

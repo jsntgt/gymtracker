@@ -17,7 +17,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="{% url 'template-edit' template.id %}">Edit</a>
-                <a class="dropdown-item" href="#">Duplicate</a>
+                <a class="dropdown-item" href="{% url 'template-duplicate' template.id %}">Duplicate</a>
                 <a class="dropdown-item" href="#">Share</a>
                 <a class="dropdown-item" href="{% url 'template-delete' template.id %}">Delete</a>
                 <div class="dropdown-divider"></div>

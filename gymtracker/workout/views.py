@@ -1,10 +1,24 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Template
+from .models import Template, Exercise
 from django.views.generic import ListView, UpdateView, DeleteView, CreateView
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
+
+
+def template_duplicate(request, pk):
+    template = Template.objects.get(id=pk)
+    exercises = template.exercises.all()
+    template.id = None
+    new_name = template.name + " - duplicate"
+    if len(new_name) > 30:
+        new_name = new_name[:30]
+    template.name = new_name
+    template.save()
+    template.exercises.add(*exercises)
+    template.save()
+    return redirect('workout-home')
 
 
 class UserWorkoutHomeView(ListView):
