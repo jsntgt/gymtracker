@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+            <div class="card">
+                <img src="{{ user.profile.background.url }}" class="card-img-top">
+                <div class="card-body">
+                    <h2 class="account-heading">{{  user.username  }}</h2>
+                    <p class="text-secondary">{{  user.email  }}</p>
+                    <a class="btn btn-primary" href="{% url 'update' %}" role="button">Update</a>
+                </div>
+            </div>
+        </div>
+      </div>
+        <h3>Bio:</h3>
+        <p>{{ user.profile.bio }}</p>
+
+    </div>
+{% endblock %}
